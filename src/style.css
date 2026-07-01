@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "SF Pro", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+}
+
+/* ---- Light mode ---- */
+:root, [data-theme="light"] {
+  color-scheme: light;
+  --color-surface: oklch(0.97 0.005 30);
+  --color-surface-alt: oklch(0.94 0.005 30);
+  --color-surface-card: oklch(0.99 0.003 30);
+  --color-border: oklch(0.88 0.005 30);
+  --color-border-strong: oklch(0.78 0.005 30);
+  --color-text: oklch(0.13 0.005 30);
+  --color-text-muted: oklch(0.45 0.005 30);
+  --color-text-dim: oklch(0.65 0.005 30);
+  --color-accent: oklch(0.15 0.01 30);
+  --color-accent-hover: oklch(0.08 0.01 30);
+  --color-accent-text: oklch(0.99 0 0);
+  --color-success: oklch(0.55 0.15 150);
+  --color-error: oklch(0.5 0.2 25);
+  --color-warning: oklch(0.6 0.15 85);
+}
+
+/* ---- Dark mode ---- */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-surface: oklch(0.12 0.008 50);
+  --color-surface-alt: oklch(0.16 0.008 50);
+  --color-surface-card: oklch(0.14 0.008 50);
+  --color-border: oklch(0.22 0.008 50);
+  --color-border-strong: oklch(0.30 0.008 50);
+  --color-text: oklch(0.93 0.005 50);
+  --color-text-muted: oklch(0.55 0.005 50);
+  --color-text-dim: oklch(0.35 0.005 50);
+  --color-accent: oklch(0.93 0.005 50);
+  --color-accent-hover: oklch(0.85 0.005 50);
+  --color-accent-text: oklch(0.12 0.008 50);
+  --color-success: oklch(0.5 0.12 150);
+  --color-error: oklch(0.5 0.15 25);
+  --color-warning: oklch(0.55 0.1 85);
+}
+
+/* ---- System-follow ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --color-surface: oklch(0.12 0.008 50);
+    --color-surface-alt: oklch(0.16 0.008 50);
+    --color-surface-card: oklch(0.14 0.008 50);
+    --color-border: oklch(0.22 0.008 50);
+    --color-border-strong: oklch(0.30 0.008 50);
+    --color-text: oklch(0.93 0.005 50);
+    --color-text-muted: oklch(0.55 0.005 50);
+    --color-text-dim: oklch(0.35 0.005 50);
+    --color-accent: oklch(0.93 0.005 50);
+    --color-accent-hover: oklch(0.85 0.005 50);
+    --color-accent-text: oklch(0.12 0.008 50);
+    --color-success: oklch(0.5 0.12 150);
+    --color-error: oklch(0.5 0.15 25);
+    --color-warning: oklch(0.55 0.1 85);
+  }
+}

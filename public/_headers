@@ -1,0 +1,25 @@
+# Static assets: cache forever
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Logo and favicon: cache forever
+/logo.*
+  Cache-Control: public, max-age=31536000, immutable
+/favicon*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML: no cache (always fresh)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Root: no cache
+/
+  Cache-Control: public, max-age=0, must-revalidate

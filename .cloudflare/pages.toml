@@ -1,0 +1,3 @@
+[pages]
+build_command = "vp build"
+build_output_dir = "dist"

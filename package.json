@@ -1,0 +1,38 @@
+{
+  "name": "um-wtools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler pages deploy",
+    "lighthouse:report": "lighthouse http://localhost:4173 --output=json --output-path=./lighthouse-report.json"
+  },
+  "dependencies": {
+    "@vueuse/core": "^14.3.0",
+    "dompurify": "^3.4.11",
+    "marked": "^18.0.5",
+    "vue": "^3.5.39",
+    "vue-i18n": "^11.4.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "@testing-library/vue": "^8.1.0",
+    "@types/dompurify": "^3.2.0",
+    "@types/marked": "^6.0.0",
+    "@types/node": "^26.0.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vitest/coverage-v8": "^4.1.9",
+    "@vue/test-utils": "^2.4.11",
+    "tailwindcss": "^4.3.2",
+    "vite": "^8.1.1",
+    "vite-plus": "^0.2.1",
+    "wrangler": "^4.105.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.9.0",
+      "onFail": "download"
+    }
+  }
+}
