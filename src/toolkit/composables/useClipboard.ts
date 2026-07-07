@@ -1,5 +1,11 @@
 import { ref } from "vue"
 
+/**
+ * Clipboard composable with auto-reset "copied" feedback state.
+ *
+ * Uses the modern Clipboard API when available, falling back to
+ * execCommand("copy") via a temporary textarea for older browsers.
+ */
 export function useClipboard() {
   const copied = ref(false)
 
