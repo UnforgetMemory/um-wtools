@@ -39,6 +39,11 @@ describe("Base64 Domain", () => {
       expect(r.rounds).toBe(1)
       expect(r.output).toBe("Hello")
     })
+    it("returns invalid for non-Base64 input", () => {
+      const r = autoDetect("Hello World!!!")
+      expect(r.isValid).toBe(false)
+      expect(r.rounds).toBe(0)
+    })
     it("detects multi-layer", () => {
       const e2 = encode(encode("Hello", 1).output, 1).output
       const r = autoDetect(encode(e2, 1).output)
