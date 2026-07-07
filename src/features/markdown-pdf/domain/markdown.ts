@@ -6,6 +6,12 @@ marked.setOptions({
   breaks: false,
 })
 
+/**
+ * Render markdown to sanitized HTML for live preview.
+ *
+ * The output is safe for `v-html` because DOMPurify strips any script
+ * tags, event handlers, and other XSS vectors.
+ */
 export function renderPreview(markdown: string): string {
   if (!markdown.trim()) return ""
   try {
@@ -16,6 +22,12 @@ export function renderPreview(markdown: string): string {
   }
 }
 
+/**
+ * Render markdown to sanitized HTML for PDF generation.
+ *
+ * Same sanitization as renderPreview but returns a generic error message
+ * on failure so PDF output never leaks unexpected content.
+ */
 export function renderForPdf(markdown: string): string {
   if (!markdown.trim()) return ""
   try {

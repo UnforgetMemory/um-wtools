@@ -1,5 +1,11 @@
 import type { PdfOptions } from "../../../toolkit/types"
 
+/**
+ * Wrap sanitized markdown HTML in a print-optimized HTML document.
+ *
+ * Includes full @page rules, typography styles, table borders, code blocks,
+ * and page-break control so the printed PDF matches modern document standards.
+ */
 export function generatePdfHtml(markdownHtml: string, options: PdfOptions): string {
   const isLandscape = options.orientation === "landscape"
   const pageSize = {

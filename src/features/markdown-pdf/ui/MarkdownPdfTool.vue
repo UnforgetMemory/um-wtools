@@ -15,14 +15,21 @@ const error = ref<string | undefined>()
 const pageFormat = ref("a4")
 const pageOrientation = ref("portrait")
 
+/** Re-render the preview HTML from the current markdown value. */
 function updatePreview() { previewHtml.value = preview(markdown.value) }
 
+// Debounce preview updates by 500ms to avoid excessive re-renders while typing.
 watch(markdown, () => {
   const timer = setTimeout(updatePreview, 500)
   return () => clearTimeout(timer)
 }, { deep: true })
 updatePreview()
 
+/**
+ * Trigger PDF generation via the browser's native print dialog.
+ *
+ * Clears any previous error state before attempting to print.
+ */
 function downloadPdf() {
   error.value = undefined
   try {
@@ -61,6 +68,7 @@ function downloadPdf() {
       </div>
       <div>
         <label class="block text-sm font-medium mb-2" :style="{ color: 'var(--color-text-muted)' }">{{ t("pdf.preview") }}</label>
+        <!-- `v-html` is safe here because `previewHtml` is sanitized by DOMPurify in the domain layer. -->
         <div class="preview-area w-full h-96 p-4 rounded-lg border overflow-auto text-sm leading-relaxed"
           :style="{
             backgroundColor: 'var(--color-surface-card)',
