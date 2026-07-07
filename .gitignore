@@ -44,5 +44,8 @@ e2e/test-results/
 .wrangler/
 .cloudflare/
 
+# OpenCode runtime data
+.cortexkit/
+
 # Local reference files (not part of repo source)
 .localref/

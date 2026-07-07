@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.1] - 2026-07-07
+
+### Fixed
+
+- **GitHub Actions deploy failure**: `cloudflare/wrangler-action@v4` requires `CLOUDFLARE_API_TOKEN` as an explicit environment variable in non-interactive mode. Added job-level `env:` injection to `.github/workflows/deploy.yml`.
+- **Gitignore coverage**: Added `.cortexkit/` to `.gitignore` to prevent OpenCode historian runtime data from being tracked.
+
 ## [0.3.0] - 2026-07-07
 
 ### Added
