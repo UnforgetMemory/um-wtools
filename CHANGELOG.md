@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **GitHub Actions deploy failure**: `cloudflare/wrangler-action@v4` requires `CLOUDFLARE_API_TOKEN` as an explicit environment variable in non-interactive mode. Added job-level `env:` injection to `.github/workflows/deploy.yml`.
+- **GitHub Actions deploy failure**: `cloudflare/wrangler-action@v4` does not reliably propagate `CLOUDFLARE_API_TOKEN` to the wrangler subprocess in non-interactive mode. Replaced action invocation with direct `pnpm exec wrangler pages deploy` step that explicitly passes the token and account ID via step-level `env:`.
 - **Gitignore coverage**: Added `.cortexkit/` to `.gitignore` to prevent OpenCode historian runtime data from being tracked.
 
 ## [0.3.0] - 2026-07-07
