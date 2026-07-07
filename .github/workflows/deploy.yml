@@ -43,7 +43,7 @@ jobs:
 
   deploy:
     needs: quality
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    if: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -69,7 +69,6 @@ jobs:
         run: pnpm build
 
       - name: Deploy to Cloudflare Pages
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: pnpm exec wrangler pages deploy ./dist --project-name=um-wtools
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
