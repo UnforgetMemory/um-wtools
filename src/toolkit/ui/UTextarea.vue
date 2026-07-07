@@ -8,6 +8,13 @@ withDefaults(defineProps<{
 }>(), { readonly: false, disabled: false, rows: 12 })
 
 const emit = defineEmits<{ "update:modelValue": [v: string] }>()
+
+/**
+ * Textarea with v-model support.
+ *
+ * Uses the native `input` event to emit value changes, which provides
+ * immediate feedback while typing (unlike `change` which fires on blur).
+ */
 </script>
 
 <template>

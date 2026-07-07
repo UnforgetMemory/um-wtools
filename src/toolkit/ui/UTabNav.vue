@@ -5,6 +5,13 @@ const props = withDefaults(defineProps<{
 }>(), {})
 
 const emit = defineEmits<{ "update:modelValue": [v: string] }>()
+
+/**
+ * Segmented tab navigation component.
+ *
+ * Emits `update:modelValue` with the selected tab id so parents can
+ * use `v-model` to track the active tab.
+ */
 </script>
 
 <template>

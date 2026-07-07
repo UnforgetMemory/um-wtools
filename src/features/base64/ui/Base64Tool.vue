@@ -19,6 +19,14 @@ const mode = ref<"encode" | "decode" | "auto">("encode")
 const error = ref<string | undefined>()
 const roundBreakdown = ref<string[]>([])
 
+/**
+ * Run the selected base64 operation based on the current mode.
+ *
+ * - encode/decode: use the explicit round count from the slider
+ * - auto: detect the number of encoding rounds automatically
+ *
+ * Clears previous output/error state when input is empty.
+ */
 function process() {
   if (!input.value.trim()) {
     output.value = ""
@@ -36,6 +44,7 @@ function process() {
     : []
 }
 
+// Re-run processing whenever input, mode, or round count changes.
 watch([input, mode, rounds], process, { immediate: false })
 </script>
 
@@ -51,6 +60,7 @@ watch([input, mode, rounds], process, { immediate: false })
         :model-value="mode"
         @update:model-value="mode = $event as 'encode' | 'decode' | 'auto'"
       />
+      <!-- Round selector is disabled in auto mode because detection controls the round count. -->
       <div class="flex items-center gap-2" :style="{ color: 'var(--color-text-muted)' }">
         <label class="text-sm font-medium">{{ t("base64.rounds") }}</label>
         <input
@@ -86,6 +96,7 @@ watch([input, mode, rounds], process, { immediate: false })
       </div>
     </div>
 
+    <!-- Show auto-detection result when applicable. -->
     <div v-if="roundBreakdown.length" class="p-3 rounded-md text-sm" :style="{ backgroundColor: 'var(--color-surface-alt)', color: 'var(--color-text-muted)' }">
       <p v-for="line in roundBreakdown" :key="line">{{ line }}</p>
     </div>

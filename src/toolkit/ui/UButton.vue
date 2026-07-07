@@ -7,6 +7,15 @@ const props = withDefaults(defineProps<{
   disabled?: boolean
 }>(), { variant: "primary", size: "md", disabled: false })
 
+/**
+ * Map button variants to inline styles using CSS custom properties.
+ *
+ * Variants:
+ * - primary: accent background with accent text
+ * - danger: error background with white text
+ * - secondary: bordered with default text
+ * - ghost: transparent background, text only
+ */
 const btnStyle = computed(() => {
   const s: Record<string, string> = {}
   if (props.variant === "primary") {

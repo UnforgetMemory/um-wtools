@@ -10,6 +10,13 @@ const props = withDefaults(defineProps<{
 
 const emit = defineEmits<{ "update:modelValue": [v: string] }>()
 
+/**
+ * Two-way binding computed for v-model support.
+ *
+ * Wraps the `modelValue` prop in a getter/setter so the native
+ * `<select>` can use `v-model` while still emitting the expected
+ * `update:modelValue` event to the parent.
+ */
 const selected = computed({
   get: () => props.modelValue,
   set: (v) => emit("update:modelValue", v),
