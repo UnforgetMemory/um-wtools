@@ -31,5 +31,15 @@ npm-debug.log*
 # Coverage
 coverage/
 
+# Playwright E2E test output
+e2e/test-results/
+
+# Playwright workaround runtime files
+.playwright-libs/
+
+# Cloudflare Pages / Wrangler
+.wrangler/
+.cloudflare/
+
 # Local reference files (not part of repo source)
 .localref/
