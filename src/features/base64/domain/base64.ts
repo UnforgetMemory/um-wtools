@@ -1,3 +1,5 @@
+import type { Base64Result } from "../../../toolkit/types"
+
 function utf8ToBytes(text: string): Uint8Array {
   return new TextEncoder().encode(text)
 }
@@ -36,8 +38,6 @@ function clampRounds(r: number): number {
 function toErrorMessage(err: unknown, fallback: string): string {
   return err instanceof Error ? `${fallback}: ${err.message}` : fallback
 }
-
-import type { Base64Result } from "../../../toolkit/types"
 
 export function encode(text: string, rounds: number = 1): Base64Result {
   rounds = clampRounds(rounds)

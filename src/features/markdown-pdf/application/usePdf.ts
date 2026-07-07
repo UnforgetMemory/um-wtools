@@ -2,6 +2,9 @@ import { renderPreview, renderForPdf } from "../domain/markdown"
 import { generatePdfHtml } from "../domain/pdf"
 import type { PdfOptions } from "../../../toolkit/types"
 
+/**
+ * PDF generation composable wrapping markdown rendering and browser print.
+ */
 export function usePdf() {
   function preview(markdown: string): string {
     return renderPreview(markdown)
@@ -22,7 +25,7 @@ export function usePdf() {
 
     iframe.onload = () => {
       setTimeout(() => {
-        try { iframe.contentWindow?.print() } catch { /* browser may block print */ }
+        try { iframe.contentWindow?.print() } catch { /* Browser may block print (mobile, popup blocker). */ }
         setTimeout(() => {
           if (document.body.contains(iframe)) document.body.removeChild(iframe)
         }, 100)
