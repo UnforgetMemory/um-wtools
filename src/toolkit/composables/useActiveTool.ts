@@ -1,15 +1,30 @@
-import { ref } from "vue"
+import { computed } from "vue"
+import { useRouter, useRoute } from "vue-router"
 import type { ToolTab } from "../types"
 
-const activeTool = ref<ToolTab | null>(null)
-
+/**
+ * Active tool state backed by vue-router.
+ *
+ * `activeTool` is a computed derived from the current route name.
+ * `navigate` and `goHome` delegate to the router, enabling proper
+ * URL-based navigation with browser history support.
+ */
 export function useActiveTool() {
+  const router = useRouter()
+  const route = useRoute()
+
+  const activeTool = computed<ToolTab | null>(() => {
+    const name = route.name
+    if (!name || name === "home") return null
+    return name as ToolTab
+  })
+
   function navigate(tab: ToolTab) {
-    activeTool.value = tab
+    router.push({ name: tab })
   }
 
   function goHome() {
-    activeTool.value = null
+    router.push({ name: "home" })
   }
 
   return { activeTool, navigate, goHome }
