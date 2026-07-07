@@ -4,12 +4,6 @@ packages:
 allowBuilds:
   bufferutil: true
   esbuild: true
-  ip-set: true
-  node-datachannel: true
   sharp: true
   utf-8-validate: true
-  utp-native: true
   workerd: true
-
-onlyBuiltDependencies:
-  - workerd
