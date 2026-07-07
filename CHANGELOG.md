@@ -5,7 +5,54 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - 2026-07-07
+## [0.3.0] - 2026-07-07
+
+### Added
+
+- **Magnet Tool**: New 2-tab tool for magnet link and .torrent file processing.
+  - **Parse tab**: Paste magnet URIs (or bare info hashes) and upload .torrent files via drag-and-drop or file picker. Displays full metadata — infoHash, name, total size, piece length/count, file list with sizes, tracker URLs, creation date, creator, comment, private flag.
+  - **Torrent → Magnet conversion**: Parsed .torrent files generate a ready-to-copy magnet URI including infoHash, display name, tracker list, and file size.
+  - **Header tab**: Add or remove the `magnet:?xt=urn:btih:` prefix with auto-detection of input type (magnet link / bare hash / unrecognized), dual copy buttons for both stripped and prefixed forms.
+  - **Local-only processing**: All parsing is done client-side via `bencode` (WebTorrent ecosystem) and `magnet-uri`. No data leaves the browser.
+  - **Full i18n**: All 5 locales with complete translation coverage.
+  - **Test coverage**: 21 new unit tests (domain + composable), 5 new E2E tests with Page Object Model.
+
+- **Default Public Trackers** (XIU2/TrackersListCollection): Curated list of 15 HTTP/HTTPS/WSS trackers injected as hints when a magnet link lacks its own trackers — improves peer discovery for metadata download and enables health checks.
+
+- **P2P Metadata Download** (WebTorrent): One-click "Download Metadata from P2P Network" for magnet links — connects to the BitTorrent network via WebRTC, downloads the info dictionary (ut_metadata / BEP 9), and extracts the full file structure. Torrent is destroyed immediately after extraction (no data download).
+
+- **Tracker Health Check**: Query HTTP/HTTPS trackers for seed/leecher/completed counts. Falls back to scrape endpoints when announce fails. Graceful error handling for CORS-limited trackers.
+
+- **Disclaimer Section 7**: New "Magnet Tool & Public Trackers" section — discloses the use of XIU2/TrackersListCollection, notes no affiliation with tracker operators, and invites issue reports for tracker removal requests.
+
+### Changed
+
+- **UTabNav Component**: Rewritten from inline styles to CSS class-based design (`.is-active`). Hover states now handled within the component — active tab uses `opacity: 0.9` on hover, inactive tabs use `var(--color-surface-alt)`. Fixes dark-theme text disappearance bug when hovering the active tab.
+- **Project version**: Bumped to 0.3.0.
+- **Dependencies Added**: `bencode` (torrent file parsing), `magnet-uri` (magnet link parsing), `bencodec`, `webtorrent` (P2P metadata download).
+- **Dependencies Removed**: `bencodec` (replaced by `bencode` from WebTorrent ecosystem).
+
+### Fixed
+
+- **UTabNav Dark Theme**: Active tab text no longer disappears on hover — `.is-active:hover` uses `opacity` instead of overriding background-color with `!important`.
+- **.torrent File Parsing**: Rewrote `parseTorrentFile` to use single-pass raw bencode decode + `TextDecoder` for safe byte-string conversion. Eliminates double-decode inconsistency and handles non-UTF-8 torrents.
+- **Disclaimer Section Leak**: Removed orphaned `disclaimer.section7` reference from `DisclaimerTool.vue` after i18n key cleanup.
+- **i18n Key Cleanup**: Removed stale health-check and metadata-download keys from all 5 locales after scope simplification.
+
+### Security
+
+- **[Supply Chain](https://github.com/XIU2/TrackersListCollection)**: Default tracker list sourced from audited public collection. Trackers used only for peer discovery — no data sent beyond standard BitTorrent protocol messages.
+- **Zero Vulnerabilities**: `pnpm audit` reports 0 known vulnerabilities.
+- **Client-Side Only**: All magnet/torrent operations remain in-browser. No server requests beyond user-initiated tracker queries.
+- **CSP Compatible**: No changes required to existing Content Security Policy.
+
+### Technical
+
+- **Domain/Application/UI Layers**: New feature follows established DDD pattern (`features/magnet/{domain,application,ui}/`).
+- **Lazy WebTorrent Loading**: WebTorrent ESM bundle loaded via dynamic `import()` — separated as a build chunk (235 KB / 69 KB gzipped), not included in main bundle.
+- **Dynamic Chunk Splitting**: `pnpm build` automatically splits WebTorrent into `webtorrent.min-*.js` via Vite's code-splitting.
+- **Playwright E2E**: 31 total tests across all tools. Magnet tool E2E covers page load, tab navigation, magnet parsing, header operations.
+- **Unit Tests**: 113 total tests across 12 test files — covers all domain logic, composable state machines, and i18n integrity.
 
 ### Added
 

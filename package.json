@@ -1,6 +1,6 @@
 {
   "name": "um-wtools",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@vueuse/core": "^14.3.0",
+    "bencode": "^4.0.1",
     "dompurify": "^3.4.11",
+    "magnet-uri": "^7.0.8",
     "marked": "^18.0.5",
     "vue": "^3.5.39",
     "vue-i18n": "^11.4.6",

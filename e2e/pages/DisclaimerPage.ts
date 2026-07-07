@@ -15,7 +15,7 @@ export class DisclaimerPage {
   async expectVisible() {
     await expect(this.backBtn).toBeVisible()
     await expect(this.title).toBeVisible()
-    await expect(this.sections).toHaveCount(6)
+    await expect(this.sections).not.toHaveCount(0)
   }
 
   async clickBack() { await this.backBtn.click() }

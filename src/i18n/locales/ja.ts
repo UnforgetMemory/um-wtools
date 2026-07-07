@@ -6,6 +6,7 @@ const ja: DefineLocaleMessage = {
     base64Desc: "多段Base64エンコード/デコード、自動検出対応、Unicode対応。",
     pdfDesc: "Markdownリアルタイムプレビュー、ブラウザネイティブ印刷でワンクリックPDF出力。",
     timestampDesc: "タイムスタンプ変換とタイムゾーン検索、リアルタイムクロックと手動入力に対応。",
+    magnetDesc: "マグネットリンク解析、トレントファイル情報抽出、磁気リンク変換。",
     github: "GitHub で Star",
     disclaimerDesc: "免責事項、利用規約、サービス説明。本ツールの使用をもって同意したものとみなします。",
     title: "ホーム",
@@ -52,6 +53,28 @@ const ja: DefineLocaleMessage = {
       invalid: "有効なタイムスタンプ形式として認識できません",
     },
   },
+
+  magnet: {
+    parse: "解析", header: "ヘッダー", magnetInput: "マグネットリンク",
+    magnetPlaceholder: "マグネットURIまたは40桁の16進InfoHashを入力",
+    orUpload: "またはトレントファイルをアップロード",
+    uploadTorrent: "クリックまたはドラッグで .torrent ファイルをアップロード",
+    parsing: "解析中...", parseResult: "解析結果",
+    infoHash: "InfoHash", name: "名前", totalSize: "合計サイズ",
+    pieceLength: "ピースサイズ", pieces: "ピース数", files: "ファイル一覧",
+    trackers: "Tracker 一覧", created: "作成日時", createdBy: "作成者",
+    comment: "コメント", private: "プライベート", yes: "はい", no: "いいえ",
+    copy: "コピー", copied: "コピー完了！", magnetLink: "マグネットリンク",
+    headerInput: "マグネットリンクまたはInfoHash",
+    headerPlaceholder: "マグネットURIまたはInfoHashを入力...",
+    detected: "検出: {type}", detectedMagnet: "マグネットリンク", detectedHash: "InfoHash",
+    detectedUnknown: "認識できません", btnStrip: "ヘッダー削除", btnAdd: "ヘッダー追加",
+    resultStripped: "ヘッダー削除後（ハッシュのみ）", resultPrefixed: "ヘッダー追加後（完全なマグネットリンク）",
+    privacy: "すべての処理はローカルブラウザで実行されます。マグネットリンクはローカルで解析、.torrentファイルもアップロードなしで解析されます。",
+    error: { empty: "入力が空です", invalidInput: "有効なマグネットURIまたはInfoHashとして認識できません",
+      invalidTorrent: ".torrentファイルを解析できませんでした", parseFailed: "解析失敗: {msg}" },
+  },
+
   disclaimer: {
     title: "免責事項と利用規約",
     lastUpdated: "最終更新：2026年7月",
@@ -67,8 +90,8 @@ const ja: DefineLocaleMessage = {
     section5Title: "5. 規約の変更",
     section5Body: "当社は、これらの条項を随時変更する権利を留保します。変更は本ページの更新とともに直ちに有効となります。定期的に本ページをご確認いただくことをお勧めします。重要な変更がある場合は、ツールのトップページで通知します。",
     section6Title: "6. 紛争解決",
-    section6Body: "本規約に関するご質問やご懸念がございましたら、GitHubリポジトリでIssueをお聞けください。紛争が生じた場合は、まず友好的な話し合いによる解決を目指します。",
-  },
+    section6Body: "本規約に関するご質問やご懸念がございましたら、GitHubリポジトリでIssueをお聞けください。紛争が生じた場合は、まず友好的な話し合いによる解決を目指します。"
+  }
 }
 
 export default ja

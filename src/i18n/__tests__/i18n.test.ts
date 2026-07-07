@@ -59,7 +59,7 @@ describe("i18n locale integrity", () => {
   describe("all locales share the same top-level keys", () => {
     it.each(allLocales)("$name has the expected top-level keys", ({ messages }) => {
       const topLevelKeys = Object.keys(messages).sort()
-      expect(topLevelKeys).toEqual(["base64", "disclaimer", "footer", "home", "pdf", "theme", "timestamp"])
+      expect(topLevelKeys).toEqual(["base64", "disclaimer", "footer", "home", "magnet", "pdf", "theme", "timestamp"])
     })
   })
 })

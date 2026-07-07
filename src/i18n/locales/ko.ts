@@ -6,6 +6,7 @@ const ko: DefineLocaleMessage = {
     base64Desc: "다중 라운드 Base64 인코딩/디코딩, 자동 감지 지원, 유니코드 안전.",
     pdfDesc: "Markdown 실시간 미리보기, 브라우저 네이티브 인쇄로 원클릭 PDF 출력.",
     timestampDesc: "타임스탬프 변환 및 시간대 조회, 실시간 시계 및 수동 입력 지원.",
+    magnetDesc: "마그넷 링크 분석, 토렌트 파일 정보 추출 및 마그넷 URI 변환.",
     github: "GitHub에서 Star",
     disclaimerDesc: "면책 조항, 이용 약관 및 서비스 설명입니다. 본 도구를 사용하면 이에 동의하는 것으로 간주됩니다.",
     title: "홈",
@@ -52,6 +53,28 @@ const ko: DefineLocaleMessage = {
       invalid: "유효한 타임스탬프 형식으로 인식할 수 없습니다",
     },
   },
+
+  magnet: {
+    parse: "파싱", header: "헤더", magnetInput: "마그넷 링크",
+    magnetPlaceholder: "마그넷 URI 또는 40자리 16진수 InfoHash 입력",
+    orUpload: "또는 토렌트 파일 업로드",
+    uploadTorrent: "클릭 또는 드래그하여 .torrent 파일 업로드",
+    parsing: "파싱 중...", parseResult: "파싱 결과",
+    infoHash: "InfoHash", name: "이름", totalSize: "전체 크기",
+    pieceLength: "조각 크기", pieces: "조각 수", files: "파일 목록",
+    trackers: "Tracker 목록", created: "생성 일시", createdBy: "생성자",
+    comment: "설명", private: "비공개", yes: "예", no: "아니요",
+    copy: "복사", copied: "복사 완료!", magnetLink: "마그넷 링크",
+    headerInput: "마그넷 링크 또는 InfoHash",
+    headerPlaceholder: "마그넷 URI 또는 InfoHash 입력...",
+    detected: "감지됨: {type}", detectedMagnet: "마그넷 링크", detectedHash: "InfoHash",
+    detectedUnknown: "인식할 수 없음", btnStrip: "헤더 제거", btnAdd: "헤더 추가",
+    resultStripped: "헤더 제거 (순수 해시)", resultPrefixed: "헤더 추가 (전체 마그넷)",
+    privacy: "모든 처리는 로컬 브라우저에서 수행됩니다. 마그넷 링크는 로컬에서 파싱되며, .torrent 파일도 업로드 없이 파싱됩니다.",
+    error: { empty: "입력이 비어 있습니다", invalidInput: "유효한 마그넷 URI 또는 InfoHash로 인식할 수 없습니다",
+      invalidTorrent: ".torrent 파일을 파싱할 수 없습니다", parseFailed: "파싱 실패: {msg}" },
+  },
+
   disclaimer: {
     title: "면책 조항 및 이용 약관",
     lastUpdated: "최종 업데이트: 2026년 7월",
@@ -67,8 +90,8 @@ const ko: DefineLocaleMessage = {
     section5Title: "5. 약관 변경",
     section5Body: "당사는 이 약관을 수시로 변경할 권리를 보유합니다. 변경 사항은 이 페이지가 업데이트됨과 동시에 즉시 효력을 발생합니다. 정기적으로 이 페이지를 확인하시기 바랍니다. 중요한 변경이 있는 경우, 도구의 메인 페이지를 통해 공지합니다.",
     section6Title: "6. 분쟁 해결",
-    section6Body: "본 약관에 대해 질문이나 우려사항이 있으시면 GitHub 저장소에 Issue를 남겨주세요. 분쟁이 발생할 경우, 당사자 간 우호적인 대화를 통해 우선 해결합니다.",
-  },
+    section6Body: "본 약관에 대해 질문이나 우려사항이 있으시면 GitHub 저장소에 Issue를 남겨주세요. 분쟁이 발생할 경우, 당사자 간 우호적인 대화를 통해 우선 해결합니다."
+  }
 }
 
 export default ko

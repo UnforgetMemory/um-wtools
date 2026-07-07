@@ -1,5 +1,5 @@
 /** Available tool tabs in the application. */
-export type ToolTab = "base64" | "markdown-pdf" | "timestamp" | "disclaimer"
+export type ToolTab = "base64" | "markdown-pdf" | "timestamp" | "disclaimer" | "magnet"
 
 /** Supported theme modes for the application. */
 export type ThemeMode = "light" | "dark" | "system"

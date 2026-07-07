@@ -65,7 +65,7 @@ function timeStr(d: Date): string {
 <template>
   <div class="space-y-6">
     <!-- Mode tabs -->
-    <div class="tab-nav-wrap">
+    <div>
       <UTabNav
         :tabs="[
           { id: 'realtime', label: t('timestamp.realTime') },
@@ -433,10 +433,4 @@ function timeStr(d: Date): string {
 /* ============================================
    Tab nav — hover on inactive tabs
    ============================================ */
-.tab-nav-wrap :deep(button) {
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-.tab-nav-wrap :deep(button:hover) {
-  background-color: var(--color-surface-alt) !important;
-}
 </style>

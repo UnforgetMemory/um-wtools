@@ -25,6 +25,9 @@ Thumbs.db
 *.log
 npm-debug.log*
 
+# TypeScript incremental build info
+*.tsbuildinfo
+
 # Runtime artifacts
 .omo/run-continuation/
 

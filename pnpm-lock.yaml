@@ -210,9 +210,15 @@ importers:
       '@vueuse/core':
         specifier: ^14.3.0
         version: 14.3.0(vue@3.5.39)
+      bencode:
+        specifier: ^4.0.1
+        version: 4.0.1
       dompurify:
         specifier: ^3.4.11
         version: 3.4.11
+      magnet-uri:
+        specifier: ^7.0.8
+        version: 7.0.8
       marked:
         specifier: ^18.0.5
         version: 18.0.5
@@ -258,13 +264,13 @@ importers:
         version: 8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)
       vite-plus:
         specifier: ^0.2.2
-        version: 0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
+        version: 0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(bufferutil@4.1.0)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
       vitest:
         specifier: ^4.1.10
         version: 4.1.10(@types/node@26.1.0)(@vitest/browser-preview@4.1.9)(@vitest/coverage-v8@4.1.10)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
       wrangler:
         specifier: ^4.107.0
-        version: 4.107.0
+        version: 4.107.0(bufferutil@4.1.0)(utf-8-validate@6.0.6)
 
 packages:
 
@@ -1312,6 +1318,10 @@ packages:
       '@vue/compiler-sfc':
         optional: true
 
+  '@thaunknown/thirty-two@1.0.5':
+    resolution: {integrity: sha512-Q53KyCXweV1CS62EfqtPDqfpksn5keQ59PGqzzkK+g8Vif1jB4inoBCcs/BUSdsqddhE3G+2Fn+4RX3S6RqT0A==}
+    engines: {node: '>=0.2.6'}
+
   '@tybys/wasm-util@0.10.3':
     resolution: {integrity: sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==}
 
@@ -1632,6 +1642,18 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
+  base64-arraybuffer@1.0.2:
+    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
+    engines: {node: '>= 0.6.0'}
+
+  bencode@4.0.1:
+    resolution: {integrity: sha512-/bCR3FvgfB8AZk4LlowShU+nfaTNRM2vruJ9aejDa5LpgkCoRjFyEauFiZFxbpxVxQbBFapYCN42Er2dkE/Qgw==}
+    engines: {node: '>=12.20.0'}
+
+  bep53-range@2.0.1:
+    resolution: {integrity: sha512-VWN7j7sqUssWD6ROZe2m709YL3u5A1IAx1qvAbH3DAhszHt4WPvCzJLRJ+mzmZn1qWIb4mpflwdn95qezz3n8g==}
+    engines: {node: '>=12.20.0'}
+
   bidi-js@1.0.3:
     resolution: {integrity: sha512-RKshQI1R3YQ+n9YJz2QQ147P66ELpa1FQEg20Dk8oW9t2KgLbpDLLp9aGZ7y8WHSshDknG0bknqGw5/tyCs5tw==}
 
@@ -1640,6 +1662,10 @@ packages:
 
   brace-expansion@2.1.1:
     resolution: {integrity: sha512-WR1cURNjuvBLMZBMbqM0UoE+WAfdUcEV1ccD8PVBVOI+Z3ND4+SZbN8RsfT2bMuG1qwz5RFvPukSZm5fF2D5eA==}
+
+  bufferutil@4.1.0:
+    resolution: {integrity: sha512-ZMANVnAixE6AWWnPzlW2KpUrxhm9woycYvPOo67jWHyFowASTEd9s+QN1EIMsSDtwhIxN4sWE1jotpuDUIgyIw==}
+    engines: {node: '>=6.14.2'}
 
   call-bind-apply-helpers@1.0.2:
     resolution: {integrity: sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==}
@@ -2092,6 +2118,10 @@ packages:
   magicast@0.5.3:
     resolution: {integrity: sha512-pVKE4UdSQ7DvHzivsCIFx2BJn1mHG6KsyrFcaxFx6tONdneEuThrDx0Cj3AMg58KyN4pzYT+LHOotxDQDjNvkw==}
 
+  magnet-uri@7.0.8:
+    resolution: {integrity: sha512-cRzrGzw6nvjj+CMQczrVGZbcZfxhth4uSIQf7PGzACW11UsptwrQbAXTuUek7k3xG1HiFZJnkGpgjY2a5Y5Pgw==}
+    engines: {node: '>=12.20.0'}
+
   make-dir@4.0.0:
     resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
     engines: {node: '>=10'}
@@ -2128,6 +2158,10 @@ packages:
   nanoid@3.3.15:
     resolution: {integrity: sha512-y7Wygv/7mEOvxTuEQDB8StXdMRBWf1kR/tlhAzBRUFkB2jfcLOAxO/SHmOO2zgz1pVgK29/kyupn059/bCHdjA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  node-gyp-build@4.8.4:
+    resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
     hasBin: true
 
   nopt@7.2.1:
@@ -2410,6 +2444,9 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
+  uint8-util@2.2.6:
+    resolution: {integrity: sha512-r+ZjS8CzPhtPF771ROOadUoqC40OVdiMKBI8lTfJQWb4W7+73sMBwMYmai/uvNcmZ7tBJJyZSad03yMWIt3RQg==}
+
   undici-types@8.3.0:
     resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
 
@@ -2419,6 +2456,10 @@ packages:
 
   unenv@2.0.0-rc.24:
     resolution: {integrity: sha512-i7qRCmY42zmCwnYlh9H2SvLEypEFGye5iRmEMKjcGi7zk9UquigRjFtTLz0TYqr0ZGLZhaMHl/foy1bZR+Cwlw==}
+
+  utf-8-validate@6.0.6:
+    resolution: {integrity: sha512-q3l3P9UtEEiAHcsgsqTgf9PPjctrDWoIXW3NpOHFdRDbLvu4DLIcxHangJ4RLrWkBcKjmcs/6NkerI8T/rE4LA==}
+    engines: {node: '>=6.14.2'}
 
   vite-plus@0.2.2:
     resolution: {integrity: sha512-bXO3O0F2/uxtvX9Ck0o67stTErH/Zh0GEcCMd9pAh22tTHABCNTDPrRMWVo733e7Ux3h0Y7HanJ7neOV/nid4g==}
@@ -3344,6 +3385,10 @@ snapshots:
       - '@vue/compiler-dom'
       - '@vue/server-renderer'
 
+  '@thaunknown/thirty-two@1.0.5':
+    dependencies:
+      uint8-util: 2.2.6
+
   '@tybys/wasm-util@0.10.3':
     dependencies:
       tslib: 2.8.1
@@ -3375,11 +3420,11 @@ snapshots:
       vite: 8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)
       vue: 3.5.39
 
-  '@vitest/browser-preview@4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.10)':
+  '@vitest/browser-preview@4.1.9(bufferutil@4.1.0)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.10)':
     dependencies:
       '@testing-library/dom': 10.4.1
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
-      '@vitest/browser': 4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.9)
+      '@vitest/browser': 4.1.9(bufferutil@4.1.0)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.9)
       vitest: 4.1.10(@types/node@26.1.0)(@vitest/browser-preview@4.1.9)(@vitest/coverage-v8@4.1.10)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
     transitivePeerDependencies:
       - bufferutil
@@ -3387,7 +3432,7 @@ snapshots:
       - utf-8-validate
       - vite
 
-  '@vitest/browser@4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.9)':
+  '@vitest/browser@4.1.9(bufferutil@4.1.0)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.9)':
     dependencies:
       '@blazediff/core': 1.9.1
       '@vitest/mocker': 4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
@@ -3397,7 +3442,7 @@ snapshots:
       sirv: 3.0.2
       tinyrainbow: 3.1.0
       vitest: 4.1.9(@types/node@26.1.0)(@vitest/browser-preview@4.1.9)(@vitest/coverage-v8@4.1.10)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
-      ws: 8.21.0
+      ws: 8.21.0(bufferutil@4.1.0)(utf-8-validate@6.0.6)
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -3655,6 +3700,14 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
+  base64-arraybuffer@1.0.2: {}
+
+  bencode@4.0.1:
+    dependencies:
+      uint8-util: 2.2.6
+
+  bep53-range@2.0.1: {}
+
   bidi-js@1.0.3:
     dependencies:
       require-from-string: 2.0.2
@@ -3664,6 +3717,11 @@ snapshots:
   brace-expansion@2.1.1:
     dependencies:
       balanced-match: 1.0.2
+
+  bufferutil@4.1.0:
+    dependencies:
+      node-gyp-build: 4.8.4
+    optional: true
 
   call-bind-apply-helpers@1.0.2:
     dependencies:
@@ -4149,6 +4207,12 @@ snapshots:
       '@babel/types': 7.29.7
       source-map-js: 1.2.1
 
+  magnet-uri@7.0.8:
+    dependencies:
+      '@thaunknown/thirty-two': 1.0.5
+      bep53-range: 2.0.1
+      uint8-util: 2.2.6
+
   make-dir@4.0.0:
     dependencies:
       semver: 7.8.5
@@ -4159,13 +4223,13 @@ snapshots:
 
   mdn-data@2.27.1: {}
 
-  miniflare@4.20260701.0:
+  miniflare@4.20260701.0(bufferutil@4.1.0)(utf-8-validate@6.0.6):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       sharp: 0.34.5
       undici: 7.28.0
       workerd: 1.20260701.1
-      ws: 8.21.0
+      ws: 8.21.0(bufferutil@4.1.0)(utf-8-validate@6.0.6)
       youch: 4.1.0-beta.10
     transitivePeerDependencies:
       - bufferutil
@@ -4180,6 +4244,9 @@ snapshots:
   mrmime@2.0.1: {}
 
   nanoid@3.3.15: {}
+
+  node-gyp-build@4.8.4:
+    optional: true
 
   nopt@7.2.1:
     dependencies:
@@ -4205,7 +4272,7 @@ snapshots:
 
   obug@2.1.3: {}
 
-  oxfmt@0.57.0(vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))):
+  oxfmt@0.57.0(vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(bufferutil@4.1.0)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))):
     dependencies:
       tinypool: 2.1.0
     optionalDependencies:
@@ -4228,7 +4295,7 @@ snapshots:
       '@oxfmt/binding-win32-arm64-msvc': 0.57.0
       '@oxfmt/binding-win32-ia32-msvc': 0.57.0
       '@oxfmt/binding-win32-x64-msvc': 0.57.0
-      vite-plus: 0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
+      vite-plus: 0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(bufferutil@4.1.0)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
 
   oxlint-tsgolint@0.24.0:
     optionalDependencies:
@@ -4239,7 +4306,7 @@ snapshots:
       '@oxlint-tsgolint/win32-arm64': 0.24.0
       '@oxlint-tsgolint/win32-x64': 0.24.0
 
-  oxlint@1.72.0(oxlint-tsgolint@0.24.0)(vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))):
+  oxlint@1.72.0(oxlint-tsgolint@0.24.0)(vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(bufferutil@4.1.0)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.72.0
       '@oxlint/binding-android-arm64': 1.72.0
@@ -4261,7 +4328,7 @@ snapshots:
       '@oxlint/binding-win32-ia32-msvc': 1.72.0
       '@oxlint/binding-win32-x64-msvc': 1.72.0
       oxlint-tsgolint: 0.24.0
-      vite-plus: 0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
+      vite-plus: 0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(bufferutil@4.1.0)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
 
   package-json-from-dist@1.0.1: {}
 
@@ -4524,6 +4591,10 @@ snapshots:
   tslib@2.8.1:
     optional: true
 
+  uint8-util@2.2.6:
+    dependencies:
+      base64-arraybuffer: 1.0.2
+
   undici-types@8.3.0: {}
 
   undici@7.28.0: {}
@@ -4532,12 +4603,17 @@ snapshots:
     dependencies:
       pathe: 2.0.3
 
-  vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)):
+  utf-8-validate@6.0.6:
+    dependencies:
+      node-gyp-build: 4.8.4
+    optional: true
+
+  vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(bufferutil@4.1.0)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)):
     dependencies:
       '@oxc-project/types': 0.138.0
       '@oxlint/plugins': 1.68.0
-      '@vitest/browser': 4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.9)
-      '@vitest/browser-preview': 4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.10)
+      '@vitest/browser': 4.1.9(bufferutil@4.1.0)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.9)
+      '@vitest/browser-preview': 4.1.9(bufferutil@4.1.0)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.10)
       '@vitest/expect': 4.1.9
       '@vitest/mocker': 4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
       '@vitest/pretty-format': 4.1.9
@@ -4546,8 +4622,8 @@ snapshots:
       '@vitest/spy': 4.1.9
       '@vitest/utils': 4.1.9
       '@voidzero-dev/vite-plus-core': 0.2.2(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)
-      oxfmt: 0.57.0(vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)))
-      oxlint: 1.72.0(oxlint-tsgolint@0.24.0)(vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)))
+      oxfmt: 0.57.0(vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(bufferutil@4.1.0)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)))
+      oxlint: 1.72.0(oxlint-tsgolint@0.24.0)(vite-plus@0.2.2(@types/node@26.1.0)(@vitest/coverage-v8@4.1.10)(bufferutil@4.1.0)(esbuild@0.28.1)(jiti@2.7.0)(jsdom@29.1.1)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)))
       oxlint-tsgolint: 0.24.0
       vitest: 4.1.9(@types/node@26.1.0)(@vitest/browser-preview@4.1.9)(@vitest/coverage-v8@4.1.10)(jsdom@29.1.1)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))
     optionalDependencies:
@@ -4627,7 +4703,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 26.1.0
-      '@vitest/browser-preview': 4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.10)
+      '@vitest/browser-preview': 4.1.9(bufferutil@4.1.0)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.10)
       '@vitest/coverage-v8': 4.1.10(vitest@4.1.10)
       jsdom: 29.1.1
     transitivePeerDependencies:
@@ -4657,7 +4733,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 26.1.0
-      '@vitest/browser-preview': 4.1.9(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.10)
+      '@vitest/browser-preview': 4.1.9(bufferutil@4.1.0)(utf-8-validate@6.0.6)(vite@8.1.3(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0))(vitest@4.1.10)
       '@vitest/coverage-v8': 4.1.10(vitest@4.1.10)
       jsdom: 29.1.1
     transitivePeerDependencies:
@@ -4744,13 +4820,13 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20260701.1
       '@cloudflare/workerd-windows-64': 1.20260701.1
 
-  wrangler@4.107.0:
+  wrangler@4.107.0(bufferutil@4.1.0)(utf-8-validate@6.0.6):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260701.1)
       blake3-wasm: 2.1.5
       esbuild: 0.28.1
-      miniflare: 4.20260701.0
+      miniflare: 4.20260701.0(bufferutil@4.1.0)(utf-8-validate@6.0.6)
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.24
       workerd: 1.20260701.1
@@ -4772,7 +4848,10 @@ snapshots:
       string-width: 5.1.2
       strip-ansi: 7.2.0
 
-  ws@8.21.0: {}
+  ws@8.21.0(bufferutil@4.1.0)(utf-8-validate@6.0.6):
+    optionalDependencies:
+      bufferutil: 4.1.0
+      utf-8-validate: 6.0.6
 
   xml-name-validator@5.0.0: {}
 

@@ -6,6 +6,7 @@ const zhTW: DefineLocaleMessage = {
     base64Desc: "多輪 Base64 編碼/解碼，支援自動檢測加密層數，Unicode 安全。",
     pdfDesc: "Markdown 即時預覽，一鍵輸出 PDF，使用瀏覽器原生列印功能。",
     timestampDesc: "時間戳轉換與時區查詢，支援即時時鐘和手動輸入。",
+    magnetDesc: "磁力連結解析、種子檔案資訊提取與磁力連結轉換。",
     github: "在 GitHub 上 Star",
     disclaimerDesc: "免責聲明、使用條款與服務說明。使用本工具即表示同意。",
     title: "首頁",
@@ -52,6 +53,27 @@ const zhTW: DefineLocaleMessage = {
       invalid: "無法識別為有效的時間戳格式",
     },
   },
+
+  magnet: {
+    parse: "解析", header: "磁力頭", magnetInput: "磁力連結",
+    magnetPlaceholder: "輸入磁力連結或 40 位十六進制 InfoHash",
+    orUpload: "或上傳種子檔案", uploadTorrent: "點擊或拖拽上傳 .torrent 檔案",
+    parsing: "解析中...", parseResult: "解析結果",
+    infoHash: "InfoHash", name: "名稱", totalSize: "總大小",
+    pieceLength: "分片大小", pieces: "分片數", files: "檔案列表",
+    trackers: "Tracker 列表", created: "建立時間", createdBy: "建立者",
+    comment: "備註", private: "私有種子", yes: "是", no: "否",
+    copy: "複製", copied: "已複製！", magnetLink: "磁力連結",
+    headerInput: "輸入磁力連結或 InfoHash",
+    headerPlaceholder: "貼上磁力連結或 InfoHash...",
+    detected: "檢測到: {type}", detectedMagnet: "磁力連結", detectedHash: "InfoHash",
+    detectedUnknown: "無法識別", btnStrip: "去除磁力頭", btnAdd: "添加磁力頭",
+    resultStripped: "去除磁力頭（純哈希）", resultPrefixed: "添加磁力頭（完整磁力連結）",
+    privacy: "所有處理均在本地瀏覽器中完成。磁力連結僅解析本地文字；.torrent 檔案解析不上傳。",
+    error: { empty: "輸入為空", invalidInput: "無法識別為有效的磁力連結或 InfoHash",
+      invalidTorrent: "無法解析 .torrent 檔案，檔案可能損毀", parseFailed: "解析失敗: {msg}" },
+  },
+
   disclaimer: {
     title: "免責聲明與使用條款",
     lastUpdated: "最後更新：2026 年 7 月",
@@ -67,8 +89,8 @@ const zhTW: DefineLocaleMessage = {
     section5Title: "5. 條款變更",
     section5Body: "我們保留隨時修改這些條款的權利。變更將在本頁面更新後立即生效。建議您定期查閱本頁面。重大變更時，我們將在工具首頁發布通知。",
     section6Title: "6. 爭議解決",
-    section6Body: "如您對這些條款有任何疑問或關切，歡迎在我們的 GitHub 倉庫中提出 Issue。如有爭議，雙方應首先透過友好溝通解決。",
-  },
+    section6Body: "如您對這些條款有任何疑問或關切，歡迎在我們的 GitHub 倉庫中提出 Issue。如有爭議，雙方應首先透過友好溝通解決。"
+  }
 }
 
 export default zhTW
