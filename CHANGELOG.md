@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **GitHub Actions deploy failure**: `cloudflare/wrangler-action@v4` does not reliably propagate `CLOUDFLARE_API_TOKEN` to the wrangler subprocess in non-interactive mode. Replaced action invocation with direct `pnpm exec wrangler pages deploy` step that explicitly passes the token via step-level `env:`. Removed unnecessary `CLOUDFLARE_ACCOUNT_ID` dependency (Pages deploy uses `--project-name`).
 - **Gitignore coverage**: Added `.cortexkit/` to `.gitignore` to prevent OpenCode historian runtime data from being tracked.
+- **Conditional deploy**: Cloudflare Pages deploy step now skips gracefully when `CLOUDFLARE_API_TOKEN` secret is not configured, instead of failing the workflow.
 
 ## [0.3.0] - 2026-07-07
 
