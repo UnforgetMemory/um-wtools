@@ -1,5 +1,9 @@
-packages:
-  - "."
+onlyBuiltDependencies:
+  - bufferutil
+  - esbuild
+  - sharp
+  - utf-8-validate
+  - workerd
 
 allowBuilds:
   bufferutil: true
