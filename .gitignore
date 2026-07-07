@@ -28,23 +28,18 @@ npm-debug.log*
 # TypeScript incremental build info
 *.tsbuildinfo
 
-# Runtime artifacts
-.omo/run-continuation/
-
-# Coverage
+# Coverage reports
 coverage/
 
-# Playwright E2E test output
+# E2E test artifacts
 e2e/test-results/
-
-# Playwright workaround runtime files
-.playwright-libs/
 
 # Cloudflare Pages / Wrangler
 .wrangler/
 .cloudflare/
 
 # OpenCode runtime data
+.omo/
 .cortexkit/
 
 # Local reference files (not part of repo source)

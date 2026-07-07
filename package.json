@@ -36,12 +36,5 @@
     "vite-plus": "^0.2.2",
     "vitest": "^4.1.10",
     "wrangler": "^4.107.0"
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.9.0",
-      "onFail": "download"
-    }
   }
 }
