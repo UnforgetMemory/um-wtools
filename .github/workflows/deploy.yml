@@ -54,6 +54,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set PNPM_VERSION for Cloudflare Pages build
+        run: |
+          ACCT=$(curl -s -H "Authorization: Bearer $CF_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts" | jq -r '.result[0].id')
+          if [ "$ACCT" != "null" ] && [ -n "$ACCT" ]; then
+            curl -s -X PATCH \
+              "https://api.cloudflare.com/client/v4/accounts/$ACCT/pages/projects/um-wtools" \
+              -H "Authorization: Bearer $CF_TOKEN" \
+              -H "Content-Type: application/json" \
+              --data '{"deployment_configs":{"production":{"env_vars":{"PNPM_VERSION":{"value":"11","type":"plain_text"}}}}}'
+          fi
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
       - uses: pnpm/action-setup@v4
         with:
           version: 11
