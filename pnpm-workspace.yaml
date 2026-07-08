@@ -1,11 +1,7 @@
 catalog: {}
 
-onlyBuiltDependencies:
-  - bufferutil
-  - esbuild
-  - sharp
-  - utf-8-validate
-  - workerd
+packages:
+  - "."
 
 allowBuilds:
   bufferutil: true
