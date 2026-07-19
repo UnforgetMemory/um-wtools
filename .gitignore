@@ -1,46 +1,104 @@
+# ==============================
 # Dependencies
+# ==============================
 node_modules/
+
+# pnpm store (local cache, not part of repo)
 .pnpm-store/
 
+# ==============================
 # Build output
+# ==============================
 dist/
+.output/
 
+# Vite cache
+.cache/
+.temp/
+
+# ==============================
 # Environment
+# ==============================
 .env
 .env.local
 .env.*.local
 
-# IDE
+# ==============================
+# TypeScript
+# ==============================
+*.tsbuildinfo
+
+# ==============================
+# IDE / Editor
+# ==============================
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+*.swn
+*.bak
 
+# ==============================
 # OS
+# ==============================
 .DS_Store
 Thumbs.db
+Desktop.ini
+ehthumbs.db
 
+# ==============================
 # Logs
+# ==============================
 *.log
 npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
-# TypeScript incremental build info
-*.tsbuildinfo
-
-# Coverage reports
+# ==============================
+# Test artifacts & coverage
+# ==============================
 coverage/
+.nyc_output/
 
-# E2E test artifacts
+# ==============================
+# Playwright E2E
+# ==============================
 e2e/test-results/
+test-results/
+playwright-report/
+playwright/.cache/
 
+# ==============================
+# Temp / Cache
+# ==============================
+*.tmp
+*.temp
+tmp/
+
+# ==============================
 # Cloudflare Pages / Wrangler
+# ==============================
 .wrangler/
 .cloudflare/
 
-# OpenCode runtime data
+# ==============================
+# Package manager
+# ==============================
+.yarn/
+.yarn-integrity
+
+# ==============================
+# Runtime data
+# ==============================
 .omo/
 .cortexkit/
-
-# Local reference files (not part of repo source)
 .localref/
+.node_repl_history
+
+# ==============================
+# Reports & generated data
+# ==============================
+lighthouse-report.json
+*.pem

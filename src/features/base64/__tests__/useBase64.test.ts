@@ -1,8 +1,7 @@
 import { describe, it, expect } from "vitest"
-import { useBase64 } from "../application/useBase64"
+import { encode, decode, autoDetect } from "../domain/base64"
 
-describe("useBase64", () => {
-  const { encode, decode, autoDetect } = useBase64()
+describe("Base64", () => {
 
   describe("encode", () => {
     it("encodes simple text", () => {

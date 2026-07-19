@@ -18,6 +18,7 @@
   <img src="https://img.shields.io/badge/i18n-zh%20%7C%20en-358EF1" alt="i18n">
   <img src="https://img.shields.io/badge/Cloudflare-Pages-F38020?logo=cloudflare" alt="Cloudflare Pages">
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License">
+  <a href="https://ko-fi.com/unforgetmemory"><img src="https://img.shields.io/badge/Ko--fi-Support-FF5E5B?logo=kofi&logoColor=white" alt="Ko-fi"></a>
 </p>
 
 ---

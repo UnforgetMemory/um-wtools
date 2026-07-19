@@ -92,7 +92,7 @@ export function parseTimestamp(input: string): ParseResult {
     if (!isNaN(d.getTime())) return { type: "unix-seconds", date: d }
   }
 
-  // Negative Unix seconds
+  // Negative Unix seconds — dates before 1970 (e.g. Nov 5 1964)
   if (/^-\d{8,12}(\.\d+)?$/.test(trimmed)) {
     const ms = Number(trimmed) * 1000
     const d = new Date(ms)
@@ -104,6 +104,8 @@ export function parseTimestamp(input: string): ParseResult {
 
 /** Format an ISO 8601 string for a specific IANA timezone with millisecond precision. */
 function isoInTimezone(date: Date, tz: string): string {
+  // "en-CA" locale produces YYYY-MM-DD format naturally (the Canadian date standard),
+  // which matches ISO 8601 without needing manual date-part extraction.
   const parts = new Intl.DateTimeFormat("en-CA", {
     year: "numeric",
     month: "2-digit",

@@ -4,9 +4,9 @@ const ko: DefineLocaleMessage = {
   home: {
     subtitle: "무료 브라우저 기반 도구 모음입니다. 모든 처리는 로컬에서 실행되며, 데이터가 서버로 전송되지 않습니다.",
     base64Desc: "다중 라운드 Base64 인코딩/디코딩, 자동 감지 지원, 유니코드 안전.",
-    pdfDesc: "Markdown 실시간 미리보기, 브라우저 네이티브 인쇄로 원클릭 PDF 출력.",
     timestampDesc: "타임스탬프 변환 및 시간대 조회, 실시간 시계 및 수동 입력 지원.",
     magnetDesc: "마그넷 링크 분석, 토렌트 파일 정보 추출 및 마그넷 URI 변환.",
+    md5Desc: "모든 텍스트의 MD5 해시를 계산합니다. 순수 클라이언트 측, 서버 업로드 없음.",
     github: "GitHub에서 Star",
     disclaimerDesc: "면책 조항, 이용 약관 및 서비스 설명입니다. 본 도구를 사용하면 이에 동의하는 것으로 간주됩니다.",
     title: "홈",
@@ -22,13 +22,18 @@ const ko: DefineLocaleMessage = {
     detected: "{rounds} 라운드의 Base64 인코딩 감지됨",
     error: { empty: "입력이 비어 있습니다", invalid: "Base64가 아닌 문자가 포함되어 있습니다", encodeFailed: "인코딩 실패: {msg}", decodeFailed: "디코딩 실패: {msg}", notBase64: "유효한 Base64가 아니거나 디코딩할 수 없습니다" },
   },
-  pdf: {
-    page: "페이지:", a4: "A4", letter: "레터", portrait: "세로", landscape: "가로",
-    download: "PDF 다운로드", editor: "Markdown 편집기", placeholder: "Markdown을 입력하거나 붙여넣기...", preview: "미리보기",
-    privacy: "Markdown은 로컬에서 렌더링됩니다. PDF는 브라우저 네이티브 인쇄 기능을 사용합니다.",
-    printHint: "인쇄 대화상자에서 '더 많은 설정' → '머리글/바닥글' 체크 해제 → PDF 저장.",
-    error: { failed: "PDF 생성 실패: {msg}" },
+  md5: {
+    title: "MD5 해시 계산",
+    input: "입력",
+    output: "MD5 해시",
+    placeholder: "MD5를 계산할 텍스트 입력...",
+    copy: "복사",
+    copied: "복사 완료!",
+    clickCopy: "클릭하여 복사",
+    waiting: "위에 텍스트를 입력하여 MD5 해시 계산",
+    privacy: "모든 처리는 로컬 브라우저에서 수행됩니다. 데이터가 서버로 전송되지 않습니다.",
   },
+
   timestamp: {
     realTime: "실시간 시계",
     manual: "수동 변환",
@@ -73,6 +78,18 @@ const ko: DefineLocaleMessage = {
     privacy: "모든 처리는 로컬 브라우저에서 수행됩니다. 마그넷 링크는 로컬에서 파싱되며, .torrent 파일도 업로드 없이 파싱됩니다.",
     error: { empty: "입력이 비어 있습니다", invalidInput: "유효한 마그넷 URI 또는 InfoHash로 인식할 수 없습니다",
       invalidTorrent: ".torrent 파일을 파싱할 수 없습니다", parseFailed: "파싱 실패: {msg}" },
+  },
+
+  md5: {
+    title: "MD5 해시 계산",
+    input: "입력",
+    output: "MD5 해시",
+    placeholder: "MD5를 계산할 텍스트 입력...",
+    copy: "복사",
+    copied: "복사 완료!",
+    clickCopy: "클릭하여 복사",
+    waiting: "위에 텍스트를 입력하여 MD5 해시 계산",
+    privacy: "모든 처리는 로컬 브라우저에서 수행됩니다. 데이터가 서버로 전송되지 않습니다.",
   },
 
   disclaimer: {

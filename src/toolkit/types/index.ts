@@ -1,5 +1,5 @@
 /** Available tool tabs in the application. */
-export type ToolTab = "base64" | "markdown-pdf" | "timestamp" | "disclaimer" | "magnet"
+export type ToolTab = "base64" | "timestamp" | "disclaimer" | "magnet" | "md5"
 
 /** Supported theme modes for the application. */
 export type ThemeMode = "light" | "dark" | "system"
@@ -18,8 +18,4 @@ export interface Base64Result {
   errorCode?: string
 }
 
-/** Options for PDF generation (page size and orientation). */
-export interface PdfOptions {
-  format?: "a4" | "letter"
-  orientation?: "portrait" | "landscape"
-}
+

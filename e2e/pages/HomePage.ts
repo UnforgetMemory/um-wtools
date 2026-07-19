@@ -12,7 +12,7 @@ export class HomePage {
   get disclaimBtn(): Locator { return this.page.locator("main button").filter({ hasText: /Disclaimer|免责|免責|免責事項|면책/ }) }
 
   toolCard(id: string): Locator {
-    const map: Record<string, string> = { base64: "Base64", timestamp: "Timestamp", "markdown-pdf": "Markdown" }
+    const map: Record<string, string> = { base64: "Base64", timestamp: "Timestamp" }
     return this.page.locator("main button.tool-card").filter({ hasText: map[id] })
   }
 
@@ -22,7 +22,6 @@ export class HomePage {
     await expect(this.disclaimBtn).toBeVisible()
     await expect(this.toolCard("base64")).toBeVisible()
     await expect(this.toolCard("timestamp")).toBeVisible()
-    await expect(this.toolCard("markdown-pdf")).toBeVisible()
   }
 
   async clickTool(id: string) {

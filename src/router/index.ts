@@ -1,18 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeHero from "../layouts/HomeHero.vue"
-import Base64Tool from "../features/base64/ui/Base64Tool.vue"
-import MarkdownPdfTool from "../features/markdown-pdf/ui/MarkdownPdfTool.vue"
-import TimestampTool from "../features/timestamp/ui/TimestampTool.vue"
-import DisclaimerTool from "../features/disclaimer/ui/DisclaimerTool.vue"
-import MagnetTool from "../features/magnet/ui/MagnetTool.vue"
 
 const routes = [
   { path: "/", name: "home", component: HomeHero },
-  { path: "/base64", name: "base64", component: Base64Tool },
-  { path: "/markdown-pdf", name: "markdown-pdf", component: MarkdownPdfTool },
-  { path: "/timestamp", name: "timestamp", component: TimestampTool },
-  { path: "/disclaimer", name: "disclaimer", component: DisclaimerTool },
-  { path: "/magnet", name: "magnet", component: MagnetTool },
+  { path: "/base64", name: "base64", component: () => import("../features/base64/ui/Base64Tool.vue") },
+  
+  { path: "/timestamp", name: "timestamp", component: () => import("../features/timestamp/ui/TimestampTool.vue") },
+  { path: "/disclaimer", name: "disclaimer", component: () => import("../features/disclaimer/ui/DisclaimerTool.vue") },
+  { path: "/magnet", name: "magnet", component: () => import("../features/magnet/ui/MagnetTool.vue") },
+  { path: "/md5", name: "md5", component: () => import("../features/md5/ui/Md5Tool.vue") },
 ]
 
 const router = createRouter({

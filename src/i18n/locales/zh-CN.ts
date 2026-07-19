@@ -4,9 +4,9 @@ const zhCN: DefineLocaleMessage = {
   home: {
     subtitle: "免费的浏览器端工具集。所有处理在本地完成，数据不会发送到任何服务器。",
     base64Desc: "多轮 Base64 编码/解码，支持自动检测加密层数，Unicode 安全。",
-    pdfDesc: "Markdown 实时预览，一键输出 PDF，使用浏览器原生打印功能。",
     timestampDesc: "时间戳转换与时区查询，支持实时时钟和手动输入。",
     magnetDesc: "磁力链接解析、种子文件信息提取与磁力链接转换。",
+    md5Desc: "计算任意文本的 MD5 哈希值。纯客户端，不上传服务器。",
     github: "在 GitHub 上 Star",
     disclaimerDesc: "免责声明、使用条款与服务说明。使用本工具即表示同意。",
     title: "首页",
@@ -21,13 +21,6 @@ const zhCN: DefineLocaleMessage = {
     privacy: "所有处理均在本地浏览器中完成。数据不会发送到任何服务器。",
     detected: "检测到 {rounds} 轮 Base64 编码",
     error: { empty: "输入为空", invalid: "输入包含非 Base64 字符", encodeFailed: "编码失败: {msg}", decodeFailed: "解码失败: {msg}", notBase64: "输入不是有效的 Base64 或无法解码" },
-  },
-  pdf: {
-    page: "页面:", a4: "A4", letter: "Letter", portrait: "纵向", landscape: "横向",
-    download: "下载 PDF", editor: "Markdown 编辑器", placeholder: "在此输入或粘贴 Markdown...", preview: "预览",
-    privacy: "Markdown 在本地渲染。PDF 使用浏览器原生打印功能。",
-    printHint: "打印对话框中点击「更多设置」→ 取消「页眉和页脚」→ 保存 PDF。",
-    error: { failed: "PDF 生成失败: {msg}" },
   },
   timestamp: {
     realTime: "实时时钟",
@@ -96,6 +89,18 @@ const zhCN: DefineLocaleMessage = {
       invalidTorrent: "\u65e0\u6cd5\u89e3\u6790 .torrent \u6587\u4ef6\uff0c\u6587\u4ef6\u53ef\u80fd\u635f\u574f",
       parseFailed: "\u89e3\u6790\u5931\u8d25: {msg}",
     },
+  },
+
+  md5: {
+    title: "MD5 哈希计算",
+    input: "输入",
+    output: "MD5 哈希",
+    placeholder: "输入要计算 MD5 的文本...",
+    copy: "复制",
+    copied: "已复制！",
+    clickCopy: "点击复制",
+    waiting: "在上方输入文本以计算 MD5 哈希",
+    privacy: "所有处理均在本地浏览器中完成。数据不会发送到任何服务器。",
   },
 
   disclaimer: {

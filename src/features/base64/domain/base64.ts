@@ -87,6 +87,8 @@ export function autoDetect(text: string, maxRounds: number = 20): Base64Result {
     try {
       const bytes = base64ToBytes(current)
       const decoded = bytesToUtf8(bytes)
+      // Stop if decoding produced the same output — prevents infinite loop
+      // when the input happens to be both valid Base64 and valid UTF-8.
       if (decoded === current) break
       current = decoded
       roundCount++

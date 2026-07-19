@@ -9,7 +9,8 @@ const tools = [
   { id: "base64" as const, title: "Base64", descKey: "base64Desc" },
   { id: "timestamp" as const, title: "Timestamp", descKey: "timestampDesc" },
   { id: "magnet" as const, title: "Magnet", descKey: "magnetDesc" },
-  { id: "markdown-pdf" as const, title: "Markdown → PDF", descKey: "pdfDesc" },
+  
+  { id: "md5" as const, title: "MD5", descKey: "md5Desc" },
 ]
 </script>
 

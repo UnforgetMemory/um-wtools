@@ -4,9 +4,9 @@ const ja: DefineLocaleMessage = {
   home: {
     subtitle: "無料のブラウザサイドツールボックス。すべての処理はローカルで実行され、データがサーバーに送信されることはありません。",
     base64Desc: "多段Base64エンコード/デコード、自動検出対応、Unicode対応。",
-    pdfDesc: "Markdownリアルタイムプレビュー、ブラウザネイティブ印刷でワンクリックPDF出力。",
     timestampDesc: "タイムスタンプ変換とタイムゾーン検索、リアルタイムクロックと手動入力に対応。",
     magnetDesc: "マグネットリンク解析、トレントファイル情報抽出、磁気リンク変換。",
+    md5Desc: "任意のテキストのMD5ハッシュ値を計算。クライアント側のみ、サーバーに送信しません。",
     github: "GitHub で Star",
     disclaimerDesc: "免責事項、利用規約、サービス説明。本ツールの使用をもって同意したものとみなします。",
     title: "ホーム",
@@ -22,13 +22,18 @@ const ja: DefineLocaleMessage = {
     detected: "{rounds} ラウンドのBase64エンコードを検出",
     error: { empty: "入力が空です", invalid: "非Base64文字が含まれています", encodeFailed: "エンコード失敗: {msg}", decodeFailed: "デコード失敗: {msg}", notBase64: "有効なBase64ではないか、デコードできません" },
   },
-  pdf: {
-    page: "ページ:", a4: "A4", letter: "レター", portrait: "縦向き", landscape: "横向き",
-    download: "PDFをダウンロード", editor: "Markdownエディター", placeholder: "Markdownを入力または貼り付け...", preview: "プレビュー",
-    privacy: "Markdownはローカルでレンダリングされます。PDFはブラウザのネイティブ印刷機能を使用します。",
-    printHint: "印刷ダイアログで「その他の設定」→「ヘッダーとフッター」のチェックを外す→ PDFを保存。",
-    error: { failed: "PDF生成失敗: {msg}" },
+  md5: {
+    title: "MD5 ハッシュ計算",
+    input: "入力",
+    output: "MD5 ハッシュ",
+    placeholder: "MD5を計算するテキストを入力...",
+    copy: "コピー",
+    copied: "コピー完了！",
+    clickCopy: "クリックでコピー",
+    waiting: "上のテキストを入力してMD5ハッシュを計算",
+    privacy: "すべての処理はローカルブラウザで実行されます。データがサーバーに送信されることはありません。",
   },
+
   timestamp: {
     realTime: "リアルタイムクロック",
     manual: "手動変換",
@@ -73,6 +78,18 @@ const ja: DefineLocaleMessage = {
     privacy: "すべての処理はローカルブラウザで実行されます。マグネットリンクはローカルで解析、.torrentファイルもアップロードなしで解析されます。",
     error: { empty: "入力が空です", invalidInput: "有効なマグネットURIまたはInfoHashとして認識できません",
       invalidTorrent: ".torrentファイルを解析できませんでした", parseFailed: "解析失敗: {msg}" },
+  },
+
+  md5: {
+    title: "MD5 ハッシュ計算",
+    input: "入力",
+    output: "MD5 ハッシュ",
+    placeholder: "MD5を計算するテキストを入力...",
+    copy: "コピー",
+    copied: "コピー完了！",
+    clickCopy: "クリックしてコピー",
+    waiting: "上の入力欄にテキストを入力してMD5ハッシュを計算",
+    privacy: "すべての処理はローカルブラウザで実行されます。データがサーバーに送信されることはありません。",
   },
 
   disclaimer: {

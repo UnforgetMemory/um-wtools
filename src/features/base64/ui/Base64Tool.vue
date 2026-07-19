@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { ref, watch } from "vue"
 import { useI18n } from "vue-i18n"
-import { useBase64 } from "../application/useBase64"
+import { encode, decode, autoDetect } from "../domain/base64"
 import { useClipboard } from "../../../toolkit/composables/useClipboard"
 import UButton from "../../../toolkit/ui/UButton.vue"
 import UCard from "../../../toolkit/ui/UCard.vue"
 import UTextarea from "../../../toolkit/ui/UTextarea.vue"
 import UTabNav from "../../../toolkit/ui/UTabNav.vue"
 
-const { encode, decode, autoDetect } = useBase64()
 const { t } = useI18n()
 const { copied, copy } = useClipboard()
 

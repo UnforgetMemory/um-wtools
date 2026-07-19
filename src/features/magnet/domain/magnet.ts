@@ -50,6 +50,8 @@ export function formatBytes(bytes: number): string {
   if (bytes === 0) return "0 B"
   const i = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), SIZE_UNITS.length - 1)
   const v = bytes / 1024 ** i
+  // Show one decimal place for small values (e.g. "4.2 KB") to avoid
+  // ambiguous "0 KB"; round to integer for larger ones.
   const n = v < 10 ? v.toFixed(1) : Math.round(v).toString()
   return `${n.replace(/\.0$/, "")} ${SIZE_UNITS[i]}`
 }

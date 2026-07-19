@@ -13,7 +13,8 @@ function detectLocale(lang: string): string | null {
   const parts = lang.split("-")
   const language = parts[0]
 
-  // Chinese script variants: Hant (Traditional) → zh-TW, default → zh-CN
+  // Chinese script variants: Hant (Traditional) → zh-TW, default → zh-CN.
+  // HK and MO are treated as Traditional for pragmatic UI coverage.
   if (language === "zh") {
     if (parts.includes("Hant") || parts.some(p => ["TW", "HK", "MO"].includes(p))) {
       return "zh-TW"

@@ -21,6 +21,7 @@ withDefaults(defineProps<{
       boxShadow: variant === 'elevated' ? '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)' : undefined,
     }"
   >
+    <slot name="title" />
     <slot />
   </div>
 </template>

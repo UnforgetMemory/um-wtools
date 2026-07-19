@@ -4,9 +4,9 @@ const zhTW: DefineLocaleMessage = {
   home: {
     subtitle: "免費的瀏覽器端工具集。所有處理在本地完成，資料不會傳送到任何伺服器。",
     base64Desc: "多輪 Base64 編碼/解碼，支援自動檢測加密層數，Unicode 安全。",
-    pdfDesc: "Markdown 即時預覽，一鍵輸出 PDF，使用瀏覽器原生列印功能。",
     timestampDesc: "時間戳轉換與時區查詢，支援即時時鐘和手動輸入。",
     magnetDesc: "磁力連結解析、種子檔案資訊提取與磁力連結轉換。",
+    md5Desc: "計算任意文字的 MD5 雜湊值。純客戶端，不上傳伺服器。",
     github: "在 GitHub 上 Star",
     disclaimerDesc: "免責聲明、使用條款與服務說明。使用本工具即表示同意。",
     title: "首頁",
@@ -22,13 +22,18 @@ const zhTW: DefineLocaleMessage = {
     detected: "檢測到 {rounds} 輪 Base64 編碼",
     error: { empty: "輸入為空", invalid: "輸入包含非 Base64 字元", encodeFailed: "編碼失敗: {msg}", decodeFailed: "解碼失敗: {msg}", notBase64: "輸入不是有效的 Base64 或無法解碼" },
   },
-  pdf: {
-    page: "頁面:", a4: "A4", letter: "Letter", portrait: "縱向", landscape: "橫向",
-    download: "下載 PDF", editor: "Markdown 編輯器", placeholder: "在此輸入或貼上 Markdown...", preview: "預覽",
-    privacy: "Markdown 在本地渲染。PDF 使用瀏覽器原生列印功能。",
-    printHint: "列印對話框中點選「更多設定」→ 取消「頁首和頁尾」→ 儲存 PDF。",
-    error: { failed: "PDF 生成失敗: {msg}" },
+  md5: {
+    title: "MD5 雜湊計算",
+    input: "輸入",
+    output: "MD5 雜湊",
+    placeholder: "輸入要計算 MD5 的文字...",
+    copy: "複製",
+    copied: "已複製！",
+    clickCopy: "點擊複製",
+    waiting: "在上方輸入文字以計算 MD5 雜湊",
+    privacy: "所有處理均在本地瀏覽器中完成。資料不會傳送到任何伺服器。",
   },
+
   timestamp: {
     realTime: "即時時鐘",
     manual: "手動轉換",
@@ -72,6 +77,18 @@ const zhTW: DefineLocaleMessage = {
     privacy: "所有處理均在本地瀏覽器中完成。磁力連結僅解析本地文字；.torrent 檔案解析不上傳。",
     error: { empty: "輸入為空", invalidInput: "無法識別為有效的磁力連結或 InfoHash",
       invalidTorrent: "無法解析 .torrent 檔案，檔案可能損毀", parseFailed: "解析失敗: {msg}" },
+  },
+
+  md5: {
+    title: "MD5 哈希計算",
+    input: "輸入",
+    output: "MD5 哈希",
+    placeholder: "輸入要計算 MD5 的文本...",
+    copy: "複製",
+    copied: "已複製！",
+    clickCopy: "點擊複製",
+    waiting: "在上方輸入文本以計算 MD5 哈希",
+    privacy: "所有處理均在本地瀏覽器中完成。資料不會傳送到任何伺服器。",
   },
 
   disclaimer: {

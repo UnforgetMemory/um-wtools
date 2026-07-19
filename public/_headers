@@ -1,7 +1,19 @@
-# Static assets: cache forever
-/assets/*.css
-  Cache-Control: public, max-age=31536000, immutable
+# Security + caching for HTML pages (matches CSP in index.html meta tag)
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Permissions-Policy: clipboard-write=(self)
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; object-src 'none'
+  Cache-Control: public, max-age=0, must-revalidate
+
+# JS assets: cache forever + MIME-type protection
 /assets/*.js
+  X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=31536000, immutable
+
+# Other static assets: cache forever
+/assets/*.css
   Cache-Control: public, max-age=31536000, immutable
 /assets/*.woff2
   Cache-Control: public, max-age=31536000, immutable
@@ -15,11 +27,3 @@
   Cache-Control: public, max-age=31536000, immutable
 /favicon*
   Cache-Control: public, max-age=31536000, immutable
-
-# HTML: no cache (always fresh)
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
-
-# Root: no cache
-/
-  Cache-Control: public, max-age=0, must-revalidate

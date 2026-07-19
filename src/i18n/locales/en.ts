@@ -4,9 +4,9 @@ const en: DefineLocaleMessage = {
   home: {
     subtitle: "Free client-side toolbox. All processing runs locally — no data leaves your browser.",
     base64Desc: "Multi-round Base64 encode/decode with auto-detection. Unicode safe.",
-    pdfDesc: "Live Markdown preview, one-click PDF via native browser print.",
     timestampDesc: "Timestamp converter and timezone lookup with live clock and manual input.",
     magnetDesc: "Magnet link parsing, torrent file info extraction, and magnet URI conversion.",
+    md5Desc: "Calculate MD5 hash of any text. Pure client-side, no server upload.",
     github: "Star on GitHub",
     disclaimerDesc: "Disclaimer, terms of use, and service information. Using the Tool constitutes acceptance.",
     title: "Home",
@@ -21,13 +21,6 @@ const en: DefineLocaleMessage = {
     privacy: "All processing is done locally in your browser. No data is sent to any server.",
     detected: "Detected {rounds} round(s) of Base64 encoding",
     error: { empty: "Input is empty", invalid: "Input contains non-Base64 characters", encodeFailed: "Encode failed: {msg}", decodeFailed: "Decode failed: {msg}", notBase64: "Input is not valid Base64 or could not be decoded" },
-  },
-  pdf: {
-    page: "Page:", a4: "A4", letter: "Letter", portrait: "Portrait", landscape: "Landscape",
-    download: "Download PDF", editor: "Markdown Editor", placeholder: "Type or paste Markdown here...", preview: "Preview",
-    privacy: "Markdown is rendered locally. PDF uses your browser's native print-to-PDF.",
-    printHint: "In print dialog: 'More settings' → uncheck 'Headers and footers' → Save PDF.",
-    error: { failed: "PDF generation failed: {msg}" },
   },
   timestamp: {
     realTime: "Live Clock",
@@ -96,6 +89,18 @@ const en: DefineLocaleMessage = {
       invalidTorrent: "Could not parse .torrent file — it may be corrupted",
       parseFailed: "Parse failed: {msg}",
     },
+  },
+
+  md5: {
+    title: "MD5 Hash Calculator",
+    input: "Input",
+    output: "MD5 Hash",
+    placeholder: "Enter text to calculate MD5...",
+    copy: "Copy",
+    copied: "Copied!",
+    clickCopy: "Click to copy",
+    waiting: "Enter text above to calculate MD5 hash",
+    privacy: "All processing is done locally in your browser. No data is sent to any server.",
   },
 
   disclaimer: {

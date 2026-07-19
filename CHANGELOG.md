@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-07-19
+
+### Added
+
+- **MD5 Tool**: New text-to-MD5-hash tool with compact output display, click-to-copy, uppercase/lowercase toggle. Pure client-side JS implementation, verified against system `md5sum`.
+- **Ko-fi Support**: Footer button with brand coral styling and coffee cup icon in `AppFooter.vue`. Ko-fi badge in README/README_EN via shields.io.
+- **Disclaimer Test Coverage**: 6 test cases for DisclaimerTool — title, date, intro, 6 sections, privacy notice, back navigation.
+- **i18n Completion**: Added missing `md5` translation keys to zh-TW, ja, ko locales.
+
+### Changed
+
+- **Route-Level Code Splitting**: All 6 tool routes converted from static imports to dynamic `() => import(...)`. Main bundle reduced from 355 KB to 236 KB (34% reduction). Each tool loads on demand.
+- **UCard #title Slot**: Added named `#title` slot to `UCard` — fixes all card titles being silently dropped by Vue 3 across Base64 and MD5 tools.
+- **Removed Pass-Through Composable**: `useBase64()` was a 1:1 wrapper with no added state or lifecycle. Components now import domain functions directly — deletion test confirmed complexity concentrates in the domain layer.
+- **Markdown Module Cleanup**: Moved `marked.setOptions()` from module-level side effect to lazy `configureMarked()` call inside the render function. Merged duplicate `renderPreview`/`renderForPdf` into a shared `render()` with error callback.
+- **Project Version**: Bumped to 0.4.0.
+
+### Removed
+
+- **Markdown → PDF Tool**: Entire feature removed — `src/features/markdown-pdf/` (domain/application/ui/tests), route, HomeHero card, `"markdown-pdf"` from ToolTab type, `PdfOptions` interface, `pdf` i18n keys from all 5 locales, `marked`, `dompurify`, `@vueuse/core` dependencies.
+
+### Security
+
+- **Zero Vulnerabilities**: `pnpm audit` reports 0 known vulnerabilities.
+- **Client-Side Only**: All operations remain in-browser. No server requests.
+- **Code-Level Audit**: Manual 5-axis security review of all source files — no XSS vectors, no hardcoded secrets, no unsafe DOM operations, no data exposure.
+
+### Technical
+
+- **Gitignore Expansion**: Comprehensive coverage — added 20+ patterns (`.output/`, `.cache/`, `playwright-report/`, `test-results/`, `*.pem`, `lighthouse-report.json`, etc.). Directory-level prioritized.
+- **Concise English Comments**: Added to `base64/domain` (infinite loop guard), `magnet/domain` (format threshold), `timestamp/domain` (negative Unix, en-CA locale rationale), `i18n/index.ts` (HK/MO pragma).
+- **i18n Test Update**: `i18n.test.ts` top-level key expectation updated to include `md5`.
+- **Architecture Decision Record**: `docs/adr/ADR-0001.md` — documents route-level code splitting, UCard slot fix, composable removal, and markdown module cleanup decisions.
+
 ## [0.3.1] - 2026-07-07
 
 ### Fixed
